@@ -27,11 +27,13 @@ git push -u origin main
 
 Use Railway MySQL (recommended for this repo layout), Aiven, PlanetScale, or any public MySQL provider.
 
-You need these values:
-- `DB_HOST`
-- `DB_USER`
-- `DB_PASSWORD`
-- `DB_NAME`
+If using Railway MySQL service in the same project, it provides:
+- `MYSQLHOST`
+- `MYSQLPORT`
+- `MYSQLUSER`
+- `MYSQLPASSWORD`
+- `MYSQLDATABASE`
+- `MYSQL_URL`
 
 ## 3) Move your local DB to hosted MySQL
 
@@ -53,13 +55,16 @@ mysql -h <DB_HOST> -u <DB_USER> -p <DB_NAME> < zoo_management.sql
 2. Create a new project.
 3. Select "Deploy from GitHub repo".
 4. Choose `Darren-Dcruz/Zoo_Management_System`.
-5. In project variables, add:
-   - `DB_HOST`
-   - `DB_USER`
-   - `DB_PASSWORD`
-   - `DB_NAME`
-   - `PORT` = `5000`
-6. Deploy.
+5. Add a MySQL service (`+ New` -> Database -> MySQL).
+6. In your app service variables, add:
+   - `DB_HOST=${{MySQL.MYSQLHOST}}`
+   - `DB_USER=${{MySQL.MYSQLUSER}}`
+   - `DB_PASSWORD=${{MySQL.MYSQLPASSWORD}}`
+   - `DB_NAME=${{MySQL.MYSQLDATABASE}}`
+   - `PORT=5000`
+   Replace `MySQL` with your actual DB service name if different.
+7. Deploy.
+8. In app service Settings -> Networking -> Generate Domain (public URL).
 
 The repo already includes:
 - root `package.json` with `start` script
@@ -77,3 +82,7 @@ After deploy, open:
 Keep real secrets only in local `backend/.env` and cloud env variables.
 
 Use `backend/.env.example` as template for teammates.
+
+## 7) Pricing note
+
+Railway is usage-based. Check current plans before deploying long term.
