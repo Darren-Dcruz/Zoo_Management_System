@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jungle Book | Zoo Database Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee:wght@400&family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="scene-glow" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="#/home" id="homeLink">
+        <span class="brand-icon">🦁</span>
+        <div class="brand-copy">
+          <h1>Jungle Book</h1>
+          <p>Zoo Database Management System</p>
+        </div>
+      </a>
+      <button class="ghost-btn" id="homeButton" type="button">Home</button>
+    </header>
+
+    <main class="shell">
+      <section class="landing" id="landingSection">
+        <div class="landing-card">
+          <p class="eyebrow">Created By</p>
+          <ul class="creator-list">
+            <li><span>Shreya Elizabeth Joseph</span><span>2462364</span></li>
+            <li><span>Kamuel Shawn</span><span>2462345</span></li>
+            <li><span>Joel Jacob Roji</span><span>2462333</span></li>
+            <li><span>Darren Samuel D'cruz</span><span>2462323</span></li>
+          </ul>
+        </div>
+        <button class="cta-btn" id="enterZooBtn" type="button">Enter Zoo</button>
+      </section>
+
+      <section class="dashboard hidden" id="dashboardSection">
+        <aside class="sidebar">
+          <h2>Tables</h2>
+          <nav id="tableNav" class="table-nav"></nav>
+        </aside>
+
+        <section class="workspace">
+          <div class="workspace-header">
+            <div>
+              <p class="workspace-kicker">Database Table</p>
+              <h2 id="tableTitle">Select a table</h2>
+              <p id="tableMeta" class="workspace-meta"></p>
+            </div>
+            <div class="workspace-actions">
+              <button class="ghost-btn" id="refreshBtn" type="button">Refresh</button>
+              <button class="primary-btn" id="addRowBtn" type="button">+ Add Row</button>
+            </div>
+          </div>
+
+          <div id="tableCards" class="table-cards"></div>
+          <div id="statusBar" class="status-bar"></div>
+          <div id="tableContainer" class="table-container"></div>
+        </section>
+      </section>
+    </main>
+
+    <dialog id="rowDialog" class="row-dialog">
+      <form id="rowForm" novalidate>
+        <div class="dialog-header">
+          <h3 id="dialogTitle"></h3>
+          <button id="closeDialogBtn" type="button" class="icon-btn" aria-label="Close">
+            x
+          </button>
+        </div>
+        <p id="dialogSubtitle" class="dialog-subtitle"></p>
+        <div id="formFields" class="form-grid"></div>
+        <p id="formError" class="form-error"></p>
+        <div class="dialog-actions">
+          <button id="cancelDialogBtn" type="button" class="ghost-btn">Cancel</button>
+          <button id="saveRowBtn" type="submit" class="primary-btn">Save</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
