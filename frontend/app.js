@@ -651,11 +651,14 @@
       return 'http://localhost:5000/api/admin';
     }
 
-    if (window.location.port === '5000') {
-      return '/api/admin';
+    const isLocalhost =
+      window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
+    if (isLocalhost && window.location.port !== '5000') {
+      return 'http://localhost:5000/api/admin';
     }
 
-    return 'http://localhost:5000/api/admin';
+    return '/api/admin';
   }
 
   function formatTableName(value) {
