@@ -58,6 +58,7 @@ mysql -h <DB_HOST> -u <DB_USER> -p <DB_NAME> < zoo_management.sql
 5. Add a MySQL service (`+ New` -> Database -> MySQL).
 6. In your app service variables, add:
    - `DB_HOST=${{MySQL.MYSQLHOST}}`
+   - `DB_PORT=${{MySQL.MYSQLPORT}}`
    - `DB_USER=${{MySQL.MYSQLUSER}}`
    - `DB_PASSWORD=${{MySQL.MYSQLPASSWORD}}`
    - `DB_NAME=${{MySQL.MYSQLDATABASE}}`
