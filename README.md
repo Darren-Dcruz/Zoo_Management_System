@@ -1,6 +1,6 @@
-# Zoo Management System
+# Zoo Management System Project Description
 
-A full-stack DBMS mini project for managing zoo data with a custom frontend and live CRUD operations connected to MySQL.
+**Jungle Book – Zoo Management System** is a database-driven web application developed to manage and automate the core operations of a zoo. The system provides a centralized platform for handling animals, species, enclosures, staff, visitors, ticketing, medical records, feeding schedules and maintenance activities. By integrating a user-friendly web interface with a backend service and a relational database, the application ensures accurate data management, real-time updates, and improved operational efficiency. This project demonstrates the practical application of Database Management System (DBMS) concepts in a real-world scenario.A full-stack DBMS mini project for managing zoo data with a custom frontend and live CRUD operations connected to MySQL.
 
 ## Live Links
 
