@@ -1,6 +1,6 @@
 (function bootstrapZooFrontend() {
   const DEFAULT_REMOTE_API_BASE =
-    'https://zoomanagementsystem-production-fad0.up.railway.app/api/admin';
+    'https://zoomanagementsystem-production.up.railway.app/api/admin';
 
   const TABLE_ORDER = [
     'enclosure',
